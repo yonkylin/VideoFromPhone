@@ -120,8 +120,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     }
-                }else {
-                    Log.e("yonky","the path of: "+Environment.getExternalStorageDirectory().getPath()+" is null");
                 }
                 response.send(array.toString());
             }

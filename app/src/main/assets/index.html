@@ -9,16 +9,16 @@
             var now = new Date();
             var $video = $("#videoplayer");
             var url = 'files'+'?' +now.getTime();
-                $getJSON(url,function(data){
+                $.getJSON(url,function(data){
                     for(var i=0;i<data.length;i++){
                         var $li=$('<li>'+data[i].name+'</li>');
                         $li.attr("path",data[i].path);
                         $("#filelist").append($li);
-                                $li.click(function(){
-                                    var p="/files/"+$(this).attr("path");
-                                    $video.attr("src","/files/"+$(this).attr("path"));
-                                    $video[0].play();
-                                });
+                         $li.click(function() {
+                        var p = "/files/" + $(this).attr("path");
+                        $video.attr("src", "/files/" + $(this).attr("path"));
+                        $video[0].play();
+                    });
                     }
                 });
          });
@@ -27,9 +27,8 @@
 </head>
     <body>
         <ul id="filelist" style ="float:left;"></ul>
-<video id="videoplayer" style="width:300px;marginLeft:100px" controls="controls">
-
-</video>
+        <video id="videoplayer" style="width:300px;marginLeft:100px;" controls="controls">
+        </video>
 </body>
 
 </html>
